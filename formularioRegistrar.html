@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <script src="https://kit.fontawesome.com/2cb25f2c39.js" crossorigin="anonymous" ></script> 
+    <script src="./app.js"></script>
+    
+    <title>Registrarse</title>
+</head>
+<body>
+    <header>
+        <nav>
+            
+                <div class="imglogo" >
+                    <img src="imagenes/logo_noticias.png" alt="" class="logo" >
+                </div>
+        </nav>
+
+    </header>
+    <div class="form_contenedor" >
+    <form class="Formulario" id="form"
+    ><h1>Registrarse</h1>
+      <div class="Contenedor">
+  
+          <div class="Input_Contenedor">
+               <input type="text" placeholder="Nombre Completo" id="name">
+               <p id="text-error-nombre"></p>
+          </div>
+  
+               <div class="Input_Contenedor">
+                   <input type="text" placeholder="Correo Electrónico " id="email">
+                   <div class="text-error"></div>
+               </div>
+  
+               <div class="Input_Contenedor">
+                   <input type="password" placeholder="Contraseña" id="password">
+                   <div class="text-error"></div>
+               </div>
+               <div class="Input_Contenedor">
+                <input type="number" placeholder="Edad" class="Edad">
+                <div class="text-error"></div>
+            </div>
+           
+            <div class="Input_Contenedor">
+                <label for="sexo">Sexo</label>
+                <div class="input-sexo">
+                    <div>
+                        <input type="radio" class="sexo" name="sexo" value="mujer">
+                        <label>Mujer</label>
+                    </div>
+                    <div>
+                        <input type="radio" class="sexo" name="sexo" value="hombre">
+                        <label>Hombre</label>
+                    </div>
+                    <div>
+                        <input type="radio" class="sexo" name="sexo" value="otros">
+                        <label>Otros</label>
+                    </div>
+                </div>
+                <div class="text-error"></div>
+            </div>
+
+            <h4 class="interes" >Temas de interes:</h4>
+            <div class="Input_Contenedor">
+                <label><input type="checkbox" id="cbox1" value="primer_checkbox"> Musica</label><br>
+            </div>
+            <div class="Input_Contenedor">
+                <label><input type="checkbox" id="cbox2" value="segundo_checkbox"> Deportes</label><br>
+            </div>
+            <div class="Input_Contenedor">
+                <label><input type="checkbox" id="cbox3" value="tercer_checkbox"> Juegos</label><br>
+            </div>
+            <div class="Input_Contenedor">
+                <label><input type="checkbox" id="cbox4" value="primer_checkbox"> Tecnologia</label><br>
+            </div>
+            <div class="text-error"></div>
+          
+            <h4 class="Pais" >Pais:</h4>
+             
+            <select name="pais" id="pais">
+                    <option value="1">Argentina</option>
+                    <option value="2">España</option>
+                    <option value="3">México</option>
+                    <option value="4">Guatemala</option>
+                    <option value="5">Honduras</option>
+                    <option value="7">El Salvador</option>
+                    <option value="8">Venezuela</option>
+                    <option value="9">Colombia</option>
+             
+                </select>
+                <div class="text-error"></div>
+                <br>
+
+                <h4 class="Pais" >Comentarios:</h4>  
+                <textarea id="comentario" name="textarea" rows="10" cols="55"></textarea>
+ 
+            <input  type="submit" value="Registrarse" class="button">
+            <p class="warnings" id="warnings" ></p>
+                <!-- modal-->
+            <div id="modalForm" class="modal">
+                  <!-- Modal content -->
+             <div class="modal-content">
+          <span class="close">&times;</span>
+           <h2>ENVIO DE FORMULARIO</h2>
+            <p>Formulario enviado correctamente</p>
+             </div>
+            </div>
+          <a class="links" href="index.html"> Volver a la pagina </a> 
+          
+      </div> 
+    </form>
+    </div>
+  
+
+</body>
+</html>
