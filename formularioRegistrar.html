@@ -32,16 +32,16 @@
   
                <div class="Input_Contenedor">
                    <input type="text" placeholder="Correo Electrónico " id="email">
-                   <div class="text-error"></div>
+                   <p id="text-error-email"></p>
                </div>
   
                <div class="Input_Contenedor">
                    <input type="password" placeholder="Contraseña" id="password">
-                   <div class="text-error"></div>
+                   <p id="text-error-pass"></p>
                </div>
                <div class="Input_Contenedor">
                 <input type="number" placeholder="Edad" class="Edad">
-                <div class="text-error"></div>
+                <p id="text-error-edad"></p>
             </div>
            
             <div class="Input_Contenedor">
@@ -60,11 +60,11 @@
                         <label>Otros</label>
                     </div>
                 </div>
-                <div class="text-error"></div>
+                <p id="text-error-sexo"></p>
             </div>
 
             <h4 class="interes" >Temas de interes:</h4>
-            <div class="Input_Contenedor">
+            <div class="Input_Contenedor_tema">
                 <label><input type="checkbox" id="cbox1" value="primer_checkbox"> Musica</label><br>
             </div>
             <div class="Input_Contenedor">
@@ -74,9 +74,9 @@
                 <label><input type="checkbox" id="cbox3" value="tercer_checkbox"> Juegos</label><br>
             </div>
             <div class="Input_Contenedor">
-                <label><input type="checkbox" id="cbox4" value="primer_checkbox"> Tecnologia</label><br>
+                <label><input type="checkbox" id="cbox4" value="cuarto_checkbox"> Tecnologia</label><br>
             </div>
-            <div class="text-error"></div>
+            <p id="text-error-tema"></p>
           
             <h4 class="Pais" >Pais:</h4>
              
@@ -91,10 +91,10 @@
                     <option value="9">Colombia</option>
              
                 </select>
-                <div class="text-error"></div>
+                <p id="text-error-pais"></p>                                                                                                                                                                                    "></p>
                 <br>
 
-                <h4 class="Pais" >Comentarios:</h4>  
+                <h4 class="Comentario" >Comentarios:</h4>  
                 <textarea id="comentario" name="textarea" rows="10" cols="55"></textarea>
  
             <input  type="submit" value="Registrarse" class="button">
