@@ -80,49 +80,27 @@ window.onload = function () {
       edad.classList.remove("error");
     }
 
-    //Campo Sexo
+    // Campo Sexo
     let array_sexo = form.getElementsById("input-sexo");
     let textErrorSexo = document.getElementById("text-error-sexo");
-    // let mensaje_sexo = document.querySelector(".input_contenedor .text-error");
+    let mensaje_sexo = document.querySelector(".input_contenedor .text-error");
 
-    //Validacion sexo
-    // let sexo_seleccionado = false;
-    // array_sexo.forEach(element => {
-    //     if(element.checked == true){
-    //         sexo_seleccionado = true;
-    //     }
-    // })
+    // Validacion sexo
+    let sexo_seleccionado = false;
+    array_sexo.forEach(element => {
+        if(element.checked == true){
+            sexo_seleccionado = true;
+        }
+    })
 
-    // if(sexo_seleccionado == false){
-    //     errorFormulario = true;
-    //     textErrorSexo.innerHTML = "Debe elegir una opcion";
-    // }else{
-    //     textErrorSexo.innerHTML = "";
-    // }
-
-    let hasError = false;
-    valor = document.getElementById("input-sexo").value;
-
-    if (valor == null || valor.length == 0) {
-      alert("Error, rellena el campo nombre");
-      hasError = true;
+    if(sexo_seleccionado == false){
+        errorFormulario = true;
+        textErrorSexo.innerHTML = "Debe elegir una opcion";
+    }else{
+        textErrorSexo.innerHTML = "";
     }
 
-    // obtenemos todos los input radio del grupo horario que esten chequeados
-    // si no hay ninguno lanzamos alerta
-    if (!document.querySelector('input[name="sexo"]:checked')) {
-      alert("Error, rellena el campo sexo");
-      hasError = true;
-    }
-
-    if (!sexo.checked) {
-      alert("Debe aceptar el registro");
-      hasError = true;
-    }
-
-    // si hay algún error no efectuamos la acción submit del form
-    if (hasError) event.preventDefault();
-  });
+    
 
   //Campo Temas
   let array_temas = document.getElementById("input[type='checkbox']");
