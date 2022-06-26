@@ -87,76 +87,75 @@ window.onload = function () {
 
     // Validacion sexo
     let sexo_seleccionado = false;
-    array_sexo.forEach(element => {
-        if(element.checked == true){
-            sexo_seleccionado = true;
-        }
-    })
+    array_sexo.forEach((element) => {
+      if (element.checked == true) {
+        sexo_seleccionado = true;
+      }
+    });
 
-    if(sexo_seleccionado == false){
-        errorFormulario = true;
-        textErrorSexo.innerHTML = "Debe elegir una opcion";
-    }else{
-        textErrorSexo.innerHTML = "";
+    if (sexo_seleccionado == false) {
+      errorFormulario = true;
+      textErrorSexo.innerHTML = "Debe elegir una opcion";
+    } else {
+      textErrorSexo.innerHTML = "";
     }
 
-    
+    //Campo Temas
+    let array_temas = document.getElementById("input[type='checkbox']");
+    let textErrorTema = document.getElementById("text-error-tema");
+    // let mensaje_temas = document.getElementById(".input_contenedor_tema .text-error-tema");
 
-  //Campo Temas
-  let array_temas = document.getElementById("input[type='checkbox']");
-  let textErrorTema = document.getElementById("text-error-tema");
-  // let mensaje_temas = document.getElementById(".input_contenedor_tema .text-error-tema");
+    //Validacion tema de interés
+    let tema_seleccionado = false;
+    textErrorTema.forEach((element) => {
+      if (element.checked == true) {
+        tema_seleccionado = true;
+      }
+    });
 
-  //Validacion tema de interés
-  let tema_seleccionado = false;
-  textErrorTema.forEach((element) => {
-    if (element.checked == true) {
-      tema_seleccionado = true;
+    if (tema_seleccionado == false) {
+      errorFormulario = true;
+      textErrorTema.innerHTML = "Al menos debe elegir un tema de interes";
+    } else {
+      textErrorTema.innerHTML = "";
     }
-  });
 
-  if (tema_seleccionado == false) {
-    errorFormulario = true;
-    textErrorTema.innerHTML = "Al menos debe elegir un tema de interes";
-  } else {
-    textErrorTema.innerHTML = "";
-  }
+    //Campo Paises
+    let mensaje_paises = document.getElementById(
+      ".input_contenedor .text-error-pais"
+    );
+    let selector_paises = document.getElementById("pais");
 
-  //Campo Paises
-  let mensaje_paises = document.getElementById(
-    ".input_contenedor .text-error-pais"
-  );
-  let selector_paises = document.getElementById("pais");
+    //Validacion País
+    let array_paises_permitido = ["arg", "esp", "mex", "gua"];
+    let pais_selected =
+      selector_paises.options[selector_paises.selectedIndex].value;
 
-  //Validacion País
-  let array_paises_permitido = ["arg", "esp", "mex", "gua"];
-  let pais_selected =
-    selector_paises.options[selector_paises.selectedIndex].value;
+    if (!array_paises_permitido.includes(pais_selected)) {
+      errorFormulario = true;
+      mensaje_paises.innerHTML = "Debe elegir un pais";
+    } else {
+      mensaje_paises.innerHTML = "";
+    }
 
-  if (!array_paises_permitido.includes(pais_selected)) {
-    errorFormulario = true;
-    mensaje_paises.innerHTML = "Debe elegir un pais";
-  } else {
-    mensaje_paises.innerHTML = "";
-  }
+    if (errorFormulario == false) {
+      modal.style.display = "block";
+    }
 
-  if (errorFormulario == false) {
-    modal.style.display = "block";
-  }
+    //Modal
+    let modal = document.getElementById("modalForm");
+    let span_cierre = document.querySelector(".close");
 
-  //Modal
-  let modal = document.getElementById("modalForm");
-  let span_cierre = document.querySelector(".close");
-
-  //Cerrarlo tocando en la X
-  span_cierre.onclick = function () {
-    modal.style.display = "none";
-  };
-
-  //Cerrarlo tocando fuera del modal
-  window.onclick = function (event) {
-    if (event.target == modal) {
+    //Cerrarlo tocando en la X
+    span_cierre.onclick = function () {
       modal.style.display = "none";
-    }
-  };
+    };
+
+    //Cerrarlo tocando fuera del modal
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+  });
 };
